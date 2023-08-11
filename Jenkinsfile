@@ -4,15 +4,12 @@ pipeline{
     tools {
         maven 'maven'
     }
-
     environment{
         ArtifactId = readMavenPom().getArtifactId()
         Version = readMavenPom().getversion()
         GroupID = readMavenPom().getGroupId()
         Name = readMavenPom().getname()
-
     }
-
     stages {
         // Specify various stage with in stages
 
@@ -58,7 +55,7 @@ pipeline{
             }
         }
 
-        // Stage5 : Deploying
+        // Stage5  : Deploying
         stage ('Deploy'){
             steps {
                 echo ' Deploying......'
